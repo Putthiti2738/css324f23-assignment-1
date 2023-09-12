@@ -49,6 +49,11 @@ def h1(s):
     return res
 
 def h3(s):
-    # implement this function
+    goal = (1, 2, 3, 4, 5, 6, 7, 8, 0)
     board, _, _ = s
+    for i in range(7):
+        if board[i] != 0:
+            row_diff = abs(i // 3 - (board[i] - 1) // 3)
+            col_diff = abs(i % 3 - (board[i] - 1) % 3)
+            res += row_diff + col_diff
     return 0
